@@ -1,0 +1,2 @@
+serviceClass: com.ttf.Agenda.client.Service
+path: 3140C4B156FB8193CE98ACF489210898.gwt.rpc
