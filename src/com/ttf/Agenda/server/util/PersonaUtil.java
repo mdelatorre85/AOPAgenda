@@ -37,7 +37,7 @@ public class PersonaUtil {
 		}
 	}
 
-	public static PersonaFamilia gePersonaFamilia(Key<Agenda> agenda,
+	public static PersonaFamilia getPersonaFamilia(Key<Agenda> agenda,
 			Long personaFamiliaId) {
 
 		if (agenda == null || personaFamiliaId == null) {
@@ -64,7 +64,7 @@ public class PersonaUtil {
 
 	}
 
-	public static PersonaAmigo gePersonaAmigo(Key<Agenda> agenda,
+	public static PersonaAmigo getPersonaAmigo(Key<Agenda> agenda,
 			Long personaAmigoId) {
 
 		if (agenda == null || personaAmigoId == null) {

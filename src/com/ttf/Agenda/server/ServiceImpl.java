@@ -321,7 +321,7 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 		Key<Usuario> usuarioKey = new Key<Usuario>(Usuario.class, usuarioId);
 		Key<Agenda> agendaKey = new Key<Agenda>(usuarioKey, Agenda.class,
 				agendaId);
-		return PersonaUtil.gePersonaFamilia(agendaKey, agendaId);
+		return PersonaUtil.getPersonaFamilia(agendaKey, personaId);
 	}
 
 	/**
@@ -342,7 +342,7 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 		Key<Usuario> usuarioKey = new Key<Usuario>(Usuario.class, usuarioId);
 		Key<Agenda> agendaKey = new Key<Agenda>(usuarioKey, Agenda.class,
 				agendaId);
-		return PersonaUtil.gePersonaAmigo(agendaKey, agendaId);
+		return PersonaUtil.getPersonaAmigo(agendaKey, personaId);
 	}
 
 	/**
@@ -363,7 +363,7 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 		Key<Usuario> usuarioKey = new Key<Usuario>(Usuario.class, usuarioId);
 		Key<Agenda> agendaKey = new Key<Agenda>(usuarioKey, Agenda.class,
 				agendaId);
-		return PersonaUtil.gePersonaEscuela(agendaKey, agendaId);
+		return PersonaUtil.gePersonaEscuela(agendaKey, personaId);
 	}
 
 }
