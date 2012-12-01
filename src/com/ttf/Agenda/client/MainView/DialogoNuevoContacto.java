@@ -715,8 +715,8 @@ public class DialogoNuevoContacto extends DialogBox implements ChangeHandler,
 								if (mainPanel.personasFamilia == null) {
 									mainPanel.personasFamilia = new TreeSet<PersonaFamilia>();
 								}
-								mainPanel.personasAmigo
-										.add((PersonaAmigo) result);
+								mainPanel.personasEscuela
+										.add((PersonaEscuela) result);
 								mainPanel.reDraw();
 								hide();
 							}

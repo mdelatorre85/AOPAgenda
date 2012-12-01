@@ -110,7 +110,17 @@ public class PanelPersonas extends DecoratorPanel implements ClickHandler,
 
 	@Override
 	public void onChange(ChangeEvent event) {
-		System.out.println("Cambio de selección");
-	}
 
+		if (event.getSource().equals(listaAmigos)) {
+			listaCompaneros.setSelectedIndex(-1);
+			listaFamiliares.setSelectedIndex(-1);
+		} else if (event.getSource().equals(listaCompaneros)) {
+			listaAmigos.setSelectedIndex(-1);
+			listaFamiliares.setSelectedIndex(-1);
+		} else if (event.getSource().equals(listaFamiliares)) {
+			listaCompaneros.setSelectedIndex(-1);
+			listaAmigos.setSelectedIndex(-1);
+		}
+
+	}
 }
