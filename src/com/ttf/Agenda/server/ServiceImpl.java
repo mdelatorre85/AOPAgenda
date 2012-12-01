@@ -255,7 +255,9 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 				.query(PersonaFamilia.class).ancestor(agendaKey).iterator();
 		PersonaFamilia familiar;
 		if (familiares.hasNext()) {
-			retorno.setPersona(familiares.next());
+			PersonaFamilia f = familiares.next();
+			retorno.setPersona(f);
+			retorno.getPersonasFamilia().add(f);
 		}
 		while (familiares.hasNext()) {
 			familiar = familiares.next();
@@ -269,7 +271,9 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 				.query(PersonaAmigo.class).ancestor(agendaKey).iterator();
 		if (retorno.getPersona() == null) {
 			if (amigos.hasNext()) {
-				retorno.setPersona(amigos.next());
+				PersonaAmigo a = amigos.next();
+				retorno.setPersona(a);
+				retorno.getPersonasAmigo().add(a);
 			}
 		}
 		PersonaAmigo amigo;
@@ -285,7 +289,9 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 				.query(PersonaEscuela.class).ancestor(agendaKey).iterator();
 		if (retorno.getPersona() == null) {
 			if (companeros.hasNext()) {
-				retorno.setPersona(companeros.next());
+				PersonaEscuela c = companeros.next();
+				retorno.setPersona(c);
+				retorno.getPersonasEscuela().add(c);
 			}
 		}
 		PersonaEscuela companero;

@@ -116,4 +116,11 @@ public class PanelAgendas extends DecoratorPanel implements ClickHandler,
 		// TODO limpiar el resto de los paneles para reflejar que no hay
 		// ninguna agenda seleccionada
 	}
+
+	public void setSelectedIndex(int selectedAgendaIndex) {
+		if (listaAgendas.getItemCount() > 0 && selectedAgendaIndex >= 0
+				&& listaAgendas.getItemCount() > selectedAgendaIndex) {
+			listaAgendas.setSelectedIndex(selectedAgendaIndex);
+		}
+	}
 }

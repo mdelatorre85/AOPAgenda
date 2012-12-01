@@ -69,6 +69,7 @@ public class MainPanel extends HorizontalPanel {
 		}
 
 		panelAgendas = new PanelAgendas(this);
+		panelAgendas.setSelectedIndex(selectedAgendaIndex);
 		add(panelAgendas);
 
 		panelPersonas = new PanelPersonas(this);
