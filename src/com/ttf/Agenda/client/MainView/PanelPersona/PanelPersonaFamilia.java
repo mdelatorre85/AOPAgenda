@@ -1,7 +1,8 @@
-package com.ttf.Agenda.client.MainView;
+package com.ttf.Agenda.client.MainView.PanelPersona;
 
 import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.ttf.Agenda.client.MainView.MainPanel;
 import com.ttf.Agenda.shared.PersonaFamilia;
 
 public class PanelPersonaFamilia extends DecoratorPanel {

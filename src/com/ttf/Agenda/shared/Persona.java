@@ -39,7 +39,7 @@ public abstract class Persona implements Serializable, Comparable<Persona> {
 	@Embedded
 	private TreeSet<CorreoElectronico> correos;
 
-	private Long fechaDeNacimiento;
+	private Long fechaDeNacimiento = null;
 
 	public Persona() {
 	}
