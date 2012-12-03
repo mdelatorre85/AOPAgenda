@@ -16,6 +16,9 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.ttf.Agenda.client.Principal;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaAmigo;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaEscuela;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaFamilia;
 import com.ttf.Agenda.shared.PersonaAmigo;
 import com.ttf.Agenda.shared.PersonaEscuela;
 import com.ttf.Agenda.shared.PersonaFamilia;
@@ -132,8 +135,14 @@ public class PanelPersonas extends DecoratorPanel implements ClickHandler,
 
 								@Override
 								public void onSuccess(PersonaAmigo result) {
-									// TODO pintar al mono que ya viene de
-									// regreso
+									if (mainPanel.panelPersona != null) {
+										mainPanel
+												.remove(mainPanel.panelPersona);
+									}
+									PanelPersonaAmigo ppa = new PanelPersonaAmigo(
+											mainPanel, result);
+									mainPanel.panelPersona = ppa;
+									mainPanel.add(ppa);
 								}
 
 								@Override
@@ -163,8 +172,14 @@ public class PanelPersonas extends DecoratorPanel implements ClickHandler,
 
 								@Override
 								public void onSuccess(PersonaEscuela result) {
-									// TODO pintar al mono que ya viene de
-									// regreso
+									if (mainPanel.panelPersona != null) {
+										mainPanel
+												.remove(mainPanel.panelPersona);
+									}
+									PanelPersonaEscuela ppe = new PanelPersonaEscuela(
+											mainPanel, result);
+									mainPanel.panelPersona = ppe;
+									mainPanel.add(ppe);
 								}
 
 								@Override
@@ -194,8 +209,14 @@ public class PanelPersonas extends DecoratorPanel implements ClickHandler,
 
 								@Override
 								public void onSuccess(PersonaFamilia result) {
-									// TODO pintar al mono que ya viene de
-									// regreso
+									if (mainPanel.panelPersona != null) {
+										mainPanel
+												.remove(mainPanel.panelPersona);
+									}
+									PanelPersonaFamilia ppf = new PanelPersonaFamilia(
+											mainPanel, result);
+									mainPanel.panelPersona = ppf;
+									mainPanel.add(ppf);
 								}
 
 								@Override

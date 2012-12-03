@@ -55,7 +55,7 @@ public abstract class PanelPersona extends DecoratorPanel {
 		}
 
 		if (p.getDireccionDomicilio() != null) {
-			sb.append("<H2>Correo Electrónico</H2>");
+			sb.append("<H2>Domicilio</H2>");
 			if (p.getDireccionDomicilio().getCalle().length() > 0) {
 				sb.append("<p><b>Calle</b> ");
 				sb.append(p.getDireccionDomicilio().getCalle());

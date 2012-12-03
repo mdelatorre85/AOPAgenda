@@ -134,7 +134,7 @@ public abstract class Persona implements Serializable, Comparable<Persona> {
 
 	public int getEdad() {
 		Date date = new Date();
-		return (int) Math.floor((fechaDeNacimiento - date.getTime())
+		return (int) Math.floor((date.getTime() - fechaDeNacimiento)
 				/ (1000l * 60l * 60l * 24l * 365l));
 	}
 

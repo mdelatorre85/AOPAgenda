@@ -1,21 +1,41 @@
 package com.ttf.Agenda.client.MainView.PanelPersona;
 
-import com.google.gwt.user.client.ui.DecoratorPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.HTML;
 import com.ttf.Agenda.client.MainView.MainPanel;
 import com.ttf.Agenda.shared.PersonaAmigo;
 
-public class PanelPersonaAmigo extends DecoratorPanel {
-	MainPanel mainPanel;
-	VerticalPanel v;
-	PersonaAmigo persona;
+public class PanelPersonaAmigo extends PanelPersona {
 
-	public PanelPersonaAmigo(MainPanel mainPanel, PersonaAmigo persona) {
-		this.mainPanel = mainPanel;
-		this.persona = persona;
+	PersonaAmigo personaAmigo;
 
-		v = new VerticalPanel();
-		v.setPixelSize(600, 640);
+	public PanelPersonaAmigo(MainPanel mainPanel, PersonaAmigo personaAmigo) {
+		super(mainPanel, personaAmigo);
+		this.personaAmigo = personaAmigo;
+		if (personaAmigo instanceof PersonaAmigo) {
+			StringBuilder sb = new StringBuilder();
+			if (personaAmigo.getFacebook() != null
+					&& personaAmigo.getFacebook().length() > 0) {
+				sb.append("<H2>Facebook</H2>");
+				sb.append("<p><a href=\"");
+				sb.append(personaAmigo.getFacebook());
+				sb.append("\">");
+				sb.append(personaAmigo.getFacebook());
+				sb.append("</a></p>");
+			}
+			if (personaAmigo.getTwitter() != null
+					&& personaAmigo.getTwitter().length() > 0) {
+				sb.append("<H2>Twitter</H2>");
+				sb.append("<p><a href=\"");
+				sb.append(personaAmigo.getTwitter());
+				sb.append("\">");
+				sb.append(personaAmigo.getTwitter());
+				sb.append("</a></p>");
+			}
+			v.add(new HTML(sb.toString()));
+		} else {
+			throw new IllegalArgumentException(
+					"parameter persona should be of the class PersonaAmigo");
+		}
 
 	}
 

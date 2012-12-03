@@ -4,6 +4,10 @@ import java.util.TreeSet;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.ttf.Agenda.client.Principal;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersona;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaAmigo;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaEscuela;
+import com.ttf.Agenda.client.MainView.PanelPersona.PanelPersonaFamilia;
 import com.ttf.Agenda.shared.Agenda;
 import com.ttf.Agenda.shared.Persona;
 import com.ttf.Agenda.shared.PersonaAmigo;
@@ -27,6 +31,7 @@ public class MainPanel extends HorizontalPanel {
 
 	PanelAgendas panelAgendas;
 	PanelPersonas panelPersonas;
+	PanelPersona panelPersona;
 
 	int selectedAgendaIndex = -1;
 
@@ -50,6 +55,26 @@ public class MainPanel extends HorizontalPanel {
 
 		panelPersonas = new PanelPersonas(this);
 		add(panelPersonas);
+
+		if (personaSeleccionada != null) {
+			if (personaSeleccionada instanceof PersonaEscuela) {
+				PanelPersonaEscuela ppe = new PanelPersonaEscuela(this,
+						(PersonaEscuela) personaSeleccionada);
+				panelPersona = ppe;
+				add(ppe);
+			} else if (personaSeleccionada instanceof PersonaAmigo) {
+				PanelPersonaAmigo ppa = new PanelPersonaAmigo(this,
+						(PersonaAmigo) personaSeleccionada);
+				panelPersona = ppa;
+				add(ppa);
+			} else if (personaSeleccionada instanceof PersonaFamilia) {
+				PanelPersonaFamilia ppf = new PanelPersonaFamilia(this,
+						(PersonaFamilia) personaSeleccionada);
+				panelPersona = ppf;
+				add(ppf);
+			}
+
+		}
 	}
 
 	public MainPanel(Usuario usuario) {
@@ -68,12 +93,32 @@ public class MainPanel extends HorizontalPanel {
 			remove(panelPersonas);
 		}
 
+		if (panelPersona != null) {
+			remove(panelPersona);
+		}
+
 		panelAgendas = new PanelAgendas(this);
 		panelAgendas.setSelectedIndex(selectedAgendaIndex);
 		add(panelAgendas);
 
 		panelPersonas = new PanelPersonas(this);
 		add(panelPersonas);
+
+		if (personaSeleccionada != null) {
+			if (personaSeleccionada instanceof PersonaEscuela) {
+				PanelPersonaEscuela ppe = new PanelPersonaEscuela(this,
+						(PersonaEscuela) personaSeleccionada);
+				add(ppe);
+			} else if (personaSeleccionada instanceof PersonaAmigo) {
+				PanelPersonaAmigo ppa = new PanelPersonaAmigo(this,
+						(PersonaAmigo) personaSeleccionada);
+				add(ppa);
+			} else if (personaSeleccionada instanceof PersonaFamilia) {
+				PanelPersonaFamilia ppf = new PanelPersonaFamilia(this,
+						(PersonaFamilia) personaSeleccionada);
+			}
+
+		}
 	}
 
 }
