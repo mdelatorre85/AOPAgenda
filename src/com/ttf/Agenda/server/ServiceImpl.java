@@ -22,6 +22,10 @@ import com.ttf.Agenda.shared.wrapper.LoginWrapper;
 @SuppressWarnings("serial")
 public class ServiceImpl extends RemoteServiceServlet implements Service {
 
+	// public static final ApplicationContext ct = new
+	// ClassPathXmlApplicationContext(
+	// "spring.xml");
+
 	/**
 	 * 
 	 * @param nombreDeUsuario
@@ -32,6 +36,7 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 	 *         principal; null de lo contrario
 	 */
 	@Override
+	@Log
 	public LoginWrapper doLogin(String nombreDeUsuario,
 			String contrasenaDeUsuario) {
 
