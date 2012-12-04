@@ -47,4 +47,9 @@ public class Agenda implements Serializable, Comparable<Agenda> {
 		return nombreDeAgenda.compareTo(o.nombreDeAgenda);
 	}
 
+	@Override
+	public String toString() {
+		return id + " " + nombreDeAgenda;
+	}
+
 }

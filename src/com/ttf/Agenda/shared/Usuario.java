@@ -11,7 +11,7 @@ public class Usuario implements Serializable {
 	private Long usuarioId;
 	private String nombreDeUsuario;
 	private String contrasenaDeUsuario;
-	
+
 	public Usuario() {
 	}
 
@@ -37,6 +37,11 @@ public class Usuario implements Serializable {
 
 	public void setContrasenaDeUsuario(String contrasenaDeUsuario) {
 		this.contrasenaDeUsuario = contrasenaDeUsuario;
+	}
+
+	public String toString() {
+		return usuarioId + " " + nombreDeUsuario;
+
 	}
 
 }

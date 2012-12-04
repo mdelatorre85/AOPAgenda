@@ -54,4 +54,9 @@ public class CorreoElectronico implements Serializable,
 		return id;
 	}
 
+	@Override
+	public String toString() {
+		return id + " " + direccionDeCorreo;
+	}
+
 }

@@ -41,6 +41,10 @@ public abstract class Persona implements Serializable, Comparable<Persona> {
 
 	private Long fechaDeNacimiento = null;
 
+	public String toString() {
+		return id + " " + getNombreCompleto();
+	}
+
 	public Persona() {
 	}
 
@@ -122,16 +126,6 @@ public abstract class Persona implements Serializable, Comparable<Persona> {
 		this.agenda = agenda;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder(nombre);
-		sb.append(" ");
-		sb.append(apellidoPaterno);
-		sb.append(" ");
-		sb.append(apellidoMaterno);
-		return sb.toString();
-	}
-
 	public int getEdad() {
 		Date date = new Date();
 		return (int) Math.floor((date.getTime() - fechaDeNacimiento)
@@ -179,4 +173,5 @@ public abstract class Persona implements Serializable, Comparable<Persona> {
 		fechaDeNacimiento = null;
 		telefonos = null;
 	}
+
 }

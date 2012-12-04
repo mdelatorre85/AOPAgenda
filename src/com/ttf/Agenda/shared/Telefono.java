@@ -29,7 +29,7 @@ public class Telefono implements Serializable, Comparable<Telefono>,
 
 	public Telefono(String telefono, int tipoDeTelefono) {
 		numeroTelefonico = telefono;
-		this.tipoDeTelefono = tipoDeTelefono;	
+		this.tipoDeTelefono = tipoDeTelefono;
 	}
 
 	public int getTipoDeTelefono() {
@@ -75,7 +75,7 @@ public class Telefono implements Serializable, Comparable<Telefono>,
 
 	@Override
 	public String toString() {
-		return numeroTelefonico;
+		return id + " " + numeroTelefonico;
 	}
 
 }

@@ -6,9 +6,6 @@ public class Direccion implements Serializable {
 
 	private static final long serialVersionUID = 1189899899889071779L;
 
-	// @Id
-	// private Long id;
-
 	private String calle;
 	private String numero;
 	private String colonia;
@@ -23,12 +20,7 @@ public class Direccion implements Serializable {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder(calle);
-		sb.append(" ");
-		sb.append(numero);
-		sb.append(" ");
-		sb.append(colonia);
-		return sb.toString();
+		return calle + " " + numero;
 	}
 
 	public String getCalle() {
@@ -86,9 +78,5 @@ public class Direccion implements Serializable {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
-
-	// public Long getId() {
-	// return id;
-	// }
 
 }

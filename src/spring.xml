@@ -4,18 +4,19 @@
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
 
 	<aop:aspectj-autoproxy />
-	<bean name="logService" class="com.ttf.Agenda.server.LogAspect"></bean>
+	<bean name="serviceBean" id="serviceBean" class="com.ttf.Agenda.server.ServiceBean"></bean>
+	<bean name="LogAspect" class="com.ttf.Agenda.server.LogAspect"></bean>
 
-	<!-- <bean id="LogAspect" name="LogAspect" class="com.ttf.Agenda.server.LogAspect"></bean> -->
+
 	<!-- <aop:config> -->
 	<!-- <aop:aspect ref="LogAspect"> -->
 	<!-- <aop:pointcut id="log" -->
-	<!-- expression="execution(* com.ttf.Agenda.server.ServiceImpl.doLogin(String,String))" 
-		/> -->
-	<!-- <aop:before pointcut-ref="log" method="beforeCompra" /> -->
+	<!-- expression="execution(* com.ttf.Agenda.server.ServiceImpl.doLogin(String,String))"></aop:pointcut> -->
+	<!-- <aop:before pointcut-ref="log" method="beforeServiceBean"></aop:before> -->
 	<!-- </aop:aspect> -->
 	<!-- </aop:config> -->
 </beans>
